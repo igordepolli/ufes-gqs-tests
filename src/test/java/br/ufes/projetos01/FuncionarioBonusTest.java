@@ -16,8 +16,11 @@ import static org.junit.Assert.*;
  *
  * @author clayton
  *
- *         Link planilha:
+ *         Link planilha com erros:
  *         https://docs.google.com/spreadsheets/d/1f0x76XPctfrakO7_58tEJxSagvFxyZ_6T_8NEn8Scqw/edit?usp=sharing
+ *
+ *         Link planilha corrigido:
+ *         https://docs.google.com/spreadsheets/d/1KPyrPjpUoH5LgU8xW5BQS1lffHaz8Q3tQyJ12t0FBf4/edit?usp=sharing
  *
  */
 public class FuncionarioBonusTest {
