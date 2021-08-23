@@ -51,7 +51,7 @@ public class FuncionarioBonusTest {
   @Test
   public void CT001() throws Exception {
     // Arrange
-    Funcionario funcionario = new Funcionario("Fulano", 2500.00, "Gerente");
+    Funcionario funcionario = new Funcionario("Fulano", 988.00, "Gerente");
     double salarioEsperado = 2500.00;
 
     // Assert
@@ -68,7 +68,7 @@ public class FuncionarioBonusTest {
 
     // Act
     pb.processar(funcionario);
-
+    
     // Assert
     assertEquals(salarioEsperado, funcionario.getSalario(), 0.001);
   }
@@ -285,4 +285,6 @@ public class FuncionarioBonusTest {
     // Assert
     new Funcionario("Fulano", 0.00, "Gerente");
   }
+  
+  
 }
