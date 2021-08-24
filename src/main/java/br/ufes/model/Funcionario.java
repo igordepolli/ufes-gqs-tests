@@ -92,9 +92,13 @@ public class Funcionario {
     return this.salarioTotal;
   }
 
-  public void addBonus(Bonus bonus) {
-    this.bonusRecebidos.add(bonus);
-  }
+   public void addBonus(Bonus bonus) {
+        if(this.bonusRecebidos.contains(bonus)) {
+            this.bonusRecebidos.remove(bonus);
+        }
+        
+        this.bonusRecebidos.add(bonus);
+    }
 
   public double calculaTotalBonus() {
     double totalBonus = 0;

@@ -51,7 +51,7 @@ public class FuncionarioBonusTest {
   @Test
   public void CT001() throws Exception {
     // Arrange
-    Funcionario funcionario = new Funcionario("Fulano", 988.00, "Gerente");
+    Funcionario funcionario = new Funcionario("Fulano", 2500.00, "Gerente");
     double salarioEsperado = 2500.00;
 
     // Assert
@@ -286,5 +286,101 @@ public class FuncionarioBonusTest {
     new Funcionario("Fulano", 0.00, "Gerente");
   }
   
+  @Test
+  public void CT019() throws Exception {
+    // Arrange
+    Funcionario funcionario = new Funcionario("Fulano", 2500.00, "Boi");
+    double salarioEsperado = 2500.00;
+
+    // Assert
+    assertEquals(salarioEsperado, funcionario.getSalarioBase(), 0.001);
+  }
   
+  @Test
+  public void CT020() throws Exception {
+    // Arrange
+    Funcionario funcionario = new Funcionario("Fulano", 2500.00, "Supervisor Senior");
+
+    double salarioEsperado = 2705.00;
+
+    ProcessadoraBonus pb = new ProcessadoraBonus();
+
+    // Act
+    pb.processar(funcionario);
+
+    // Assert
+    assertEquals(salarioEsperado, funcionario.getSalario(), 0.001);
+  }
+  
+ 
+  @Test
+  public void CT021() throws Exception {
+    // Arrange
+    Funcionario funcionario = new Funcionario("Fulano", 2500.00, "Gerente");
+    thrown.expect(Exception.class);
+    thrown.expectMessage(is("\n#1 Informe um nome válido"));
+
+    // Assert
+    funcionario.setNome(null);
+  }
+  
+    @Test
+  public void CT022() throws Exception {
+    // Arrange
+    Funcionario funcionario = new Funcionario("Fulano", 2500.00, "Gerente");
+    thrown.expect(Exception.class);
+    thrown.expectMessage(is("\n#1 Informe um nome válido"));
+
+    // Assert
+    funcionario.setNome("");
+  }
+  
+  
+  @Test
+  public void CT023() throws Exception {
+    // Arrange
+    Funcionario funcionario = new Funcionario("Fulano", 2500.00, "Gerente");
+    thrown.expect(Exception.class);
+    thrown.expectMessage(is("\n#2 Informe um cargo válido"));
+
+    // Assert
+    funcionario.setCargo(null);
+  }
+  
+    @Test
+  public void CT024() throws Exception {
+    // Arrange
+    Funcionario funcionario = new Funcionario("Fulano", 2500.00, "Gerente");
+    thrown.expect(Exception.class);
+    thrown.expectMessage(is("\n#2 Informe um cargo válido"));
+
+    // Assert
+    funcionario.setCargo("");
+  }
+  
+  
+  
+  
+  
+  @Test
+  public void CT025() throws Exception {
+    // Arrange
+    Funcionario funcionario = new Funcionario("Fulano", 2500.00, "Gerente");
+    double salarioEsperado = 2650.00;
+    funcionario.setFaltas(2);
+    ProcessadoraBonus pb = new ProcessadoraBonus();
+
+    // Act
+    pb.processar(funcionario);
+    pb.processar(funcionario);
+
+    
+    
+    // Assert
+    assertEquals(salarioEsperado, funcionario.getSalario(), 0.001);
+  }
+  
+  
+
+
 }

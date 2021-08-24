@@ -1,5 +1,7 @@
 package br.ufes.model;
 
+import java.util.Objects;
+
 public class Bonus {
 
     private final String tipo;
@@ -22,5 +24,32 @@ public class Bonus {
     public String toString() {
         return "Bonus: Tipo:" + this.tipo + ", valor:" + valor;
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 97 * hash + Objects.hashCode(this.tipo);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Bonus other = (Bonus) obj;
+        if (!this.tipo.contains(other.tipo)) {
+            return false;
+        }
+        return true;
+    }
+    
+    
 
 }

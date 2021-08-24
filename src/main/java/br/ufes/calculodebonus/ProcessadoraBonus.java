@@ -10,9 +10,9 @@ public class ProcessadoraBonus {
     public ProcessadoraBonus() {
         metodosDeCalculoBonus = new ArrayList<>();
 
+        this.metodosDeCalculoBonus.add(new MetodoCalculoBonusCargo());
         this.metodosDeCalculoBonus.add(new MetodoCalculaBonusFalta());
         this.metodosDeCalculoBonus.add(new MetodoCalculaBonusDistancia());
-        this.metodosDeCalculoBonus.add(new MetodoCalculoBonusCargo());
     }
 
     public void processar(Funcionario funcionario) {
