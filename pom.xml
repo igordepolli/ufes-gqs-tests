@@ -9,6 +9,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
+        <sonar.organization>igordepolli</sonar.organization>
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
     </properties>
     <dependencies>
         <!-- https://mvnrepository.com/artifact/junit/junit -->
@@ -18,7 +20,7 @@
             <version>4.13</version>
             <scope>test</scope>
         </dependency>
-    </dependencies>  
+    </dependencies>
     <build>
         <plugins>
             <plugin>
@@ -61,6 +63,6 @@
                 </executions>
             </plugin>
         </plugins>
-    </build> 
+    </build>
 
 </project>
