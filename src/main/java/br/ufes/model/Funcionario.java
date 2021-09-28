@@ -43,7 +43,7 @@ public class Funcionario {
     }
 
     public void setNome(String nome) throws Exception {
-        if (nome == null || nome.trim() == "") {
+        if (nome == null || nome.trim().equals("")) {
             throw new Exception("\n#1 Informe um nome válido");
         }
         this.nome = nome;
@@ -86,7 +86,7 @@ public class Funcionario {
     }
 
     public void setCargo(String cargo) throws Exception {
-        if (cargo == null || cargo.trim() == "") {
+        if (cargo == null || cargo.trim().equals("")) {
             throw new Exception("\n#2 Informe um cargo válido");
         }
 
@@ -134,5 +134,5 @@ public class Funcionario {
 
         return strFuncionario;
     }
- 
+
 }
